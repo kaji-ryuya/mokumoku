@@ -14,7 +14,7 @@
             <h1>
               <%= @event.title %>
             </h1>
-            <% if @event.only_woman == "true" %>
+            <% if @event.only_woman? %>
               <div>
                 <span class="badge rounded-pill bg-pink">女性限定</span>
               </div>
@@ -86,8 +86,8 @@
           <h4 class="text-center">
             <%= l @event.held_at, format: :short %>
           </h4>
-          <% if current_user.gender == 'other' && @event.only_woman == 'true' %>
-          <% elsif current_user.gender == 'male' && @event.only_woman == 'true' %>
+          <% if current_user.gender == 'other' && @event.only_woman? %>
+          <% elsif current_user.gender == 'male' && @event.only_woman? %>
           <% else %>
             <hr />
             <div class="text-center">
