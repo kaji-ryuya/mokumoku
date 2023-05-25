@@ -25,7 +25,7 @@
           <%= image_tag event.user.decorate.avatar, class: 'avatar-sm rounded-circle' %>
           <%= event.user.name %>
         </div>
-        <% if event.only_woman == "true" %>
+        <% if event.only_woman? %>
           <div>
             <span class="badge rounded-pill bg-pink">女性限定</span>
           </div>

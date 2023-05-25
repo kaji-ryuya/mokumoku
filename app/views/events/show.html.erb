@@ -86,8 +86,7 @@
           <h4 class="text-center">
             <%= l @event.held_at, format: :short %>
           </h4>
-          <% if current_user.gender == 'other' && @event.only_woman? %>
-          <% elsif current_user.gender == 'male' && @event.only_woman? %>
+          <% if current_user.gender != 'woman' && @event.only_woman? %>
           <% else %>
             <hr />
             <div class="text-center">
